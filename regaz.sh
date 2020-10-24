@@ -1,7 +1,7 @@
 #!/bin/bash
 
-year=$2
-month=$1
+year=$(date +"%Y")
+month=$(date +"%m")
 
 datefile="gaz_0"$month$year
 if [ $month -ge 10 ]
