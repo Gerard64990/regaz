@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 year=$(date +"%Y")
 month=$(date +"%m")
