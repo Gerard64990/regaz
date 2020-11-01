@@ -1,14 +1,14 @@
 #!/bin/sh
 
 year=$(date +"%Y")
-month=$(date +"%m")
+month=$(date -d "@$(($(date +%s) - 86400))" +"%m")
 
 datefile="gaz_0"$month$year
 if [ $month -ge 10 ]
 then
     datefile="gaz_"$month$year
 fi
-echo "Curl"
+echo "Curl for $month/$year"
 curl --silent -X POST "https://www.myregaz.com/api-public/consumption/ID_TO_REPLACE/statistics/xls" --data "month="$month"&year="$year --output $datefile".xlsx" > /dev/null
 
 echo "Call xlsx2csv.py"
