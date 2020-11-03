@@ -1,7 +1,7 @@
 #!/bin/sh
 
 year=$(date +"%Y")
-month=$(date -d "@$(($(date +%s) - 86400))" +"%m")
+month=$(date -d "@$(($(date +%s) - 3600*24*3))" +"%m")
 
 datefile="gaz_0"$month$year
 if [ $month -ge 10 ]
