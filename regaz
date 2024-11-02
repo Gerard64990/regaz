@@ -2,6 +2,9 @@
 
 year=$(date +"%Y")
 month=$(date -d "@$(($(date +%s) - 3600*24*3))" +"%m")
+/etc/periodic/daily/regaz.py $year $month
+
+exit
 
 datefile="gaz_0"$month$year
 if [ $month -ge 10 ]
